@@ -42,6 +42,7 @@ Implement FastAPI webserver for inference, which should have:
 - a single endpoint `/predict`, accepting POST requests
 - Pydantic model validating request  (input), JSON with single key `text` (string)
 - Pydantic model validating response (output), JSON with single key `prediction` (string)
+- Fow now, before you stard next point, you can return always 'positive'
 
 To test the application, you can use [Swagger UI](https://fastapi.tiangolo.com/#interactive-api-docs)
 (provided by FastAPI), `curl`, `requests` or any other library. `curl` code would be:
@@ -64,7 +65,7 @@ The sample expected response is:
 Your teammate, the data scientist, has already prepared the sentiment analysis model for you: logistic
 regression on top of Sentence Transformer embeddings. Transformer was saved with `sentence-transformers`
 library, and logistic regression with `joblib` (for an overview of alternatives, see [scikit-learn docs](https://scikit-learn.org/stable/model_persistence.html)).
-He shared it with Google Drive: https://drive.google.com/file/d/1_mUpuyHuF6gASW8v72N2vgUDh16D7xsO/view?usp=sharing.
+He shared it with Google Drive: https://drive.google.com/file/d/1NRZdYq5jweVRUzAZG518LMhs4E56IgxG/view?usp=share_link
 
 Download and unpack the model. It contains two models, that you need to load and integrate.
 See `sentence-transformers` and scikit-learn docs for model loading instructions.
