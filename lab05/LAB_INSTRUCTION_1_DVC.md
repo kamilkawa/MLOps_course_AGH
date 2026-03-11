@@ -11,6 +11,12 @@ repository.
 DVC also has other features, e.g. data pipelines and experiment versioning, but
 we will focus here on the "Git for data" aspect here.
 
+Start with syncing the uv
+```bash
+uv sync
+source .venv/bin/activate
+```
+
 ## Git configuration
 
 To use DVC, you need a Git repository. Overall, DVC is very tightly integrated with
@@ -88,7 +94,6 @@ outs:
 
 ### Understanding .dvc files
 
-**What is a .dvc file?**
 A `.dvc` file is a small metadata file that DVC creates to track your large data files. Think of it
 as a "pointer" or "reference" to your actual data. It contains:
 - **MD5 hash** - a unique fingerprint of your data file's contents
@@ -98,8 +103,6 @@ as a "pointer" or "reference" to your actual data. It contains:
 - It can be safely committed to Git without bloating your repository
 - It allow DVC to verify data integrity and detect changes
 - It enable version control for large files that Git cannot handle efficiently
-
-**The actual data**
 
 The actual data file (`ames_data_2006_2008.parquet`) is:
 1. Stored in DVC's cache (`.dvc/cache/` directory)
@@ -189,14 +192,15 @@ MD5 checksum of its contents.
 
 ## Exercise 1
 
-1. Make a Git commit and push it to remote. The `.dvc/config` file has changed, since
+1. Add `/remote_data` to `.gitignore`
+2. Make a Git commit and push it to remote. The `.dvc/config` file has changed, since
    we added a new DVC remote, and we need to track that.
 
-2. Download the [ames_description.txt file from Google Drive](https://drive.google.com/file/d/1wJkhdOAkYAiZwqDbDevFdSvkhxh8mpNS/view?usp=drive_link)
+3. Download the [ames_description.txt file from Google Drive](https://drive.google.com/file/d/1wJkhdOAkYAiZwqDbDevFdSvkhxh8mpNS/view?usp=drive_link)
    and put it in the `data` directory. This file contains descriptions of data features
    and their possible values.
 
-3. Add the new file to DVC, and add the resulting `.dvc` file to Git.
+4. Add the new file to DVC, and add the resulting `.dvc` file to Git.
 ```bash
 dvc add data/ames_description.txt
 git add data/ames_description.txt.dvc data/.gitignore
