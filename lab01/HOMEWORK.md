@@ -19,7 +19,7 @@ Instructions:
     - `clean-text`
     - `joblib`
     - `torch`
-    - `transformers`
+    - `sentence_transformers`
 - To finish all the tasks, you will also need further dependencies. Add them as necessary. All are mentioned
   in the lab instruction, in code, or in the docstring of prepared `inference.py` script.
 - Use [dependency groups](https://docs.astral.sh/uv/concepts/projects/dependencies/#development-dependencies)
