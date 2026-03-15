@@ -1,5 +1,7 @@
 import requests
 
+# Make sure to run a server (app) in terminal before executing this file - endpoint must be reachable.
+# uv run uvicorn app:app --reload --port 8000
 BASE_URL = "http://127.0.0.1:8000"
 
 
