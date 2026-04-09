@@ -1,7 +1,7 @@
 import numpy as np
 from fastapi import FastAPI
-from inference import load_model, predict
-from api.models.iris import PredictRequest, PredictResponse
+from app.inference import load_model, predict
+from app.api.models.iris import PredictRequest, PredictResponse
 
 app = FastAPI()
 model = load_model()
